@@ -1,9 +1,10 @@
-import { useAuth } from "react-oidc-context";
+// import { useAuth } from "react-oidc-context";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AdminProvider } from "./context/adminContext";
 import { ToastContainer } from "react-toastify";
 import { Home } from "./pages/home";
 import { Header } from "./pages/header";
+import { Login } from "./pages/login";
 
 export const App = () => {
   // const auth = useAuth();
@@ -33,7 +34,7 @@ export const App = () => {
     <>
       <AdminProvider>
         <BrowserRouter>
-          <div className="flex h-full">
+          <div className="">
             {/* alert bar */}
             <ToastContainer
               position="top-right"
@@ -41,16 +42,12 @@ export const App = () => {
               hideProgressBar={false}
             />
 
-            <Header />
-
-            <div className="w-full h-full fixed z-10 pl-[60px]">
               <Routes>
                 <Route path="/" element={<Home />} />
-                {/* <Route path="/add_risk" element={<RegisterCategories />} />
-                  <Route path="/risk_theme/:id" element={<RiskThemePage />} />
-                  <Route path="/indicators" element={<Indicators />} /> */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/teste" element={<Login />} />
+                <Route path="/register" element={<Login />} />
               </Routes>
-            </div>
           </div>
         </BrowserRouter>
       </AdminProvider>

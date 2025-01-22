@@ -3,7 +3,7 @@ import MyLogo from "../assets/logo.svg";
 
 export const Header = () => {
   return (
-    <header className="w-full bg-white h-14 border-b border-black border-1 pl-14 pr-14 flex items-center ">
+    <header className="w-full bg-white h-14 border-b border-black border-1 pl-14 pr-16 flex items-center ">
       {/* left part */}
       <div className="basis-1/3 h-full flex items-center">
       <a href="/">
@@ -19,13 +19,13 @@ export const Header = () => {
       <nav className="basis-1/3 flex h-full items-center justify-center">
         <Link
           to="/"
-          className="basis-1/3 flex justify-center h-full items-center"
+          className="flex justify-center px-5 h-full items-center"
         >
           Home Page
         </Link>
         <Link
           to="/"
-          className="basis-1/3 flex justify-center h-full items-center"
+          className="flex justify-center px-5 h-full items-center"
         >
           Sobre Nós
         </Link>

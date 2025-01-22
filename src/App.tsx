@@ -34,7 +34,7 @@ export const App = () => {
     <>
       <AdminProvider>
         <BrowserRouter>
-          <div className="">
+          <div className="h-screen">
             {/* alert bar */}
             <ToastContainer
               position="top-right"

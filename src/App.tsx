@@ -1,10 +1,12 @@
 // import { useAuth } from "react-oidc-context";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router";
 import { AdminProvider } from "./context/adminContext";
 import { ToastContainer } from "react-toastify";
 import { Home } from "./pages/home";
 import { Header } from "./pages/header";
 import { Login } from "./pages/login";
+import { Hunter } from "./pages/hunter";
+import { AuthLoginHunter } from "./components/isAuthenticatedHunter";
 
 export const App = () => {
   // const auth = useAuth();
@@ -42,12 +44,20 @@ export const App = () => {
               hideProgressBar={false}
             />
 
-              <Routes>
+            <Routes>
+              <Route element={<Header />} >
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/teste" element={<Login />} />
-                <Route path="/register" element={<Login />} />
-              </Routes>
+              </Route>
+
+              <Route path="/user" element={<AuthLoginHunter />}>
+                {/* <Route index element={<Home />} /> */}
+                <Route path="hunter" element={<Hunter />} />
+              </Route>
+
+              <Route path="/user/company" element={<Hunter />} />
+              {/* <Route path="/teste" element={<Login />} /> */}
+            </Routes>
           </div>
         </BrowserRouter>
       </AdminProvider>

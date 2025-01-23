@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import MyLogo from "../assets/logo.svg";
+import { Outlet } from "react-router";
 
 export const Header = () => {
   return (
+    <div className="flex flex-col h-screen">
     <header className="w-full bg-white h-14 border-b border-black border-1 pl-14 pr-16 flex items-center ">
       {/* left part */}
       <div className="basis-1/3 h-full flex items-center">
@@ -41,5 +43,8 @@ export const Header = () => {
         </Link>
       </div>
     </header>
+
+      <Outlet />
+    </div>
   );
 };

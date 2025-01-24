@@ -17,16 +17,14 @@ export const Login = () => {
   const loginButton = (data: LoginType) => {
     mutateLogin(data, {
       onSuccess: ({ data }: { data: LoginReturn }) => {
-        console.log("logado");
         localStorage.setItem("token", data.token);
         // localStorage.setItem("expiresIn", data.expiresIn.toString());
-        navigator(`/user/${data.type}`);
-        toast.success("Logado com sucesso!");
+        navigator(`/user`);
+        toast.success("Logado com sucesso!"); // TODO: revisar necessidade
       },
       onError: (erro: any) => {
-        console.log("erro");
         console.log(erro.response.data.message);
-        toast.error("senha ou email errado!");
+        toast.error("Email ou Senha incorreto!");
       },
     });
   };

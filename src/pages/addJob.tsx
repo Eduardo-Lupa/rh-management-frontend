@@ -26,12 +26,12 @@ export const AddJob = () => {
   };
 
   return (
-    <div className="bg-gray-300 w-full">
+    <div className="bg-gray-100 w-full px-4">
       <form onSubmit={handleSubmit(createButton)}>
         {/* title */}
         <div className="mb-4">
           <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
-            title
+            Title
           </label>
           <input
             type="text"
@@ -130,7 +130,7 @@ export const AddJob = () => {
           type="submit"
           className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Login
+          Criar
         </button>
       </form>
     </div>

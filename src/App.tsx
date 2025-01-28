@@ -9,6 +9,7 @@ import { User } from "./pages/userPage";
 import { AuthLoginHunter } from "./components/isAuthenticated";
 import { HeaderUser } from "./components/headerUser";
 import { AddJob } from "./pages/addJob";
+import { ViewJobs } from "./pages/viewJobs";
 
 export const App = () => {
   // const auth = useAuth();
@@ -56,6 +57,10 @@ export const App = () => {
                 <Route element={<HeaderUser />}> 
                   <Route path="/user" element={<User />} />
                   <Route path="/user/add_job" element={<AddJob />} />
+                  <Route path="/user/jobs" element={<ViewJobs />} />
+                  <Route path="/user/recomendation/hunter" element={<ViewJobs />} />
+                  <Route path="/user/recomendation/company" element={<ViewJobs />} />
+                  <Route path="/user/help" element={<ViewJobs />} />
                 </Route>
               </Route>
 

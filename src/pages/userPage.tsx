@@ -1,3 +1,8 @@
 export const User = () => {
-  return <div>User</div>;
+  return <div className="flex w-full">
+    <div>
+
+    User
+    </div>
+    </div>;
 };

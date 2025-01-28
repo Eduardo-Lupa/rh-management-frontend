@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { LoginType } from "../types/login";
-import { postAuthLogin } from "./endpoints/post";
+import { postAuthLogin, postCreateJob } from "./endpoints/post";
 import { getAuthType } from "./endpoints/get";
 
 // arquivo para configurar os mutations e querries do react-query
@@ -15,5 +15,11 @@ export const useAuthenticatedType = () => {
   return useQuery({
     queryKey: ["getType"],
     queryFn: () => getAuthType(),
+  })
+};
+
+export const useCreateJob = () => {
+  return useMutation({
+    mutationFn: (data) => postCreateJob(data),
   })
 };

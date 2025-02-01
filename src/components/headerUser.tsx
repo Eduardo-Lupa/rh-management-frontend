@@ -47,7 +47,7 @@ export const HeaderUser = () => {
                 <Link to={"/user/help"}>Help</Link>
               </div>
             </div>
-          ) : (
+          ) : user?.type == "company" ? (
             // company buttons
             <div className="flex flex-col justify-center items-center mr-1">
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
@@ -68,6 +68,22 @@ export const HeaderUser = () => {
                 <Link to={"/user/help"}>Help</Link>
               </div>
             </div>
+          ) : (
+            // admin buttons
+            <div className="flex flex-col justify-center items-center mr-1">
+              <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
+                <Link to={"/user/admin/jobs"}>Aceitar Jobs</Link>
+              </div>
+              <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
+                <Link to={"/user/all_jobs"}>Meus Jobs</Link>
+              </div>
+              <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
+                <Link to={"/user/all_jobs"}>Candidatos</Link>
+              </div>
+              {/* <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
+                <Link to={"/user/all_jobs"}>Indique uma empresa</Link>
+              </div> */}
+            </div>
           )}
 
           {/* logout button */}
@@ -85,7 +101,7 @@ export const HeaderUser = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="flex-grow">
         <Outlet />
       </div>

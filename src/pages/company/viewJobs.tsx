@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useGetJobsCompany } from "../../api/hooks";
 import { formatDate, formatFloat } from "../../utils/formatUtils";
-import { set } from "react-hook-form";
 import { useEffect } from "react";
 
 export const ViewJobsCompany = () => {

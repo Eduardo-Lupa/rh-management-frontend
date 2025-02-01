@@ -13,3 +13,7 @@ export const getJobsCompany = async (params: any) => {
 export const getUser = async () => {
     return await axiosInstance.get("/user/me").then(response => response.data);
 }
+
+export const getAwaitingJobs = async () => {
+    return await axiosInstance.get("/company/jobs/awaiting").then(response => response.data);
+}

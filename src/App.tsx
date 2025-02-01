@@ -11,6 +11,7 @@ import { HeaderUser } from "./components/headerUser";
 import { AddJob } from "./pages/company/addJob";
 import { ViewJobsCompany } from "./pages/company/viewJobs";
 import { AllJobs } from "./pages/hunter/allJobs";
+import { AdminJobs } from "./pages/admin/jobs";
 
 export const App = () => {
   // const auth = useAuth();
@@ -67,6 +68,11 @@ export const App = () => {
                 {/* only hunter  */}
                 <Route element={<AuthLogin type="hunter" />}>
                   <Route path="/user/all_jobs" element={<AllJobs />} />
+                </Route>
+                
+                {/* only ADMIN  */}
+                <Route element={<AuthLogin type="admin" />}>
+                  <Route path="/user/admin/jobs" element={<AdminJobs />} />
                 </Route>
 
                 <Route

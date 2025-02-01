@@ -51,10 +51,10 @@ export const HeaderUser = () => {
             // company buttons
             <div className="flex flex-col justify-center items-center mr-1">
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user/add_job?tab=1"}>Adicionar Job</Link>
+                <Link to={"/user/add_job"}>Adicionar Job</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user/jobs"}>Meus Jobs</Link>
+                <Link to={"/user/jobs?tab=1"}>Meus Jobs</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
                 <Link to={"/user/recomendation/hunter"}>Indique um hunter</Link>

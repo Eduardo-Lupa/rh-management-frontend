@@ -6,8 +6,8 @@ export const getAuthType = async () => {
     return await axiosInstance.get("/auth/type").then(response => response.data);
 }
 
-export const getJobsCompany = async () => {
-    return await axiosInstance.get("/company/jobs").then(response => response.data);
+export const getJobsCompany = async (params: any) => {
+    return await axiosInstance.get("/company/jobs", { params }).then(response => response.data);
 }
 
 export const getUser = async () => {

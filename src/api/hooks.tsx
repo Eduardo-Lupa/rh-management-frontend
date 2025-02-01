@@ -31,9 +31,9 @@ export const useCreateJob = () => {
   })
 };
 
-export const useGetJobsCompany = () => {
+export const useGetJobsCompany = (params: any) => {
   return useQuery({
     queryKey: ["getJobsCompany"],
-    queryFn: () => getJobsCompany(),
+    queryFn: () => getJobsCompany(params),
   })
 };

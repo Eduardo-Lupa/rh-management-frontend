@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useCreateJob } from "../../api/hooks";
 import { toast } from "react-toastify";
-import { useParams, useSearchParams } from "react-router-dom";
 
 export const AddJob = () => {
   const {
@@ -11,8 +10,6 @@ export const AddJob = () => {
     formState: { errors },
   } = useForm();
 
-  const [params] = useSearchParams();
-  console.log(params.get('tab'));
   const { mutate: mutateCreateJob } = useCreateJob();
 
   const createButton = (data: any) => {
@@ -30,7 +27,7 @@ export const AddJob = () => {
 
   return (
     <div className="bg-gray-100 w-full px-4">
-      <h1 className="text-2xl font-bold mb-4 pt-4">Empregos</h1>
+      <h1 className="text-2xl font-bold mb-4 pt-4">Adicinar Emprego</h1>
 
       <form onSubmit={handleSubmit(createButton)}>
         {/* title */}

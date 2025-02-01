@@ -6,10 +6,11 @@ import { Home } from "./pages/home";
 import { Header } from "./components/header";
 import { Login } from "./pages/login";
 import { User } from "./pages/userPage";
-import { AuthLoginHunter } from "./components/isAuthenticated";
+import { AuthLogin } from "./components/isAuthenticated";
 import { HeaderUser } from "./components/headerUser";
-import { AddJob } from "./pages/addJob";
-import { ViewJobs } from "./pages/viewJobs";
+import { AddJob } from "./pages/company/addJob";
+import { ViewJobsCompany } from "./pages/company/viewJobs";
+import { AllJobs } from "./pages/hunter/allJobs";
 
 export const App = () => {
   // const auth = useAuth();
@@ -39,35 +40,50 @@ export const App = () => {
     <>
       <AdminProvider>
         <BrowserRouter>
-          <div className="h-screen">
-            {/* alert bar */}
-            <ToastContainer
-              position="top-right"
-              autoClose={2000}
-              hideProgressBar={false}
-            />
+          {/* alert bar */}
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+          />
 
-            <Routes>
-              <Route element={<Header />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-              </Route>
+          <Routes>
+            <Route element={<Header />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+            </Route>
 
-              <Route element={<AuthLoginHunter />}> {/* authenticação de logado */}
-                <Route element={<HeaderUser />}> 
-                  <Route path="/user" element={<User />} />
+            <Route element={<AuthLogin />}>
+              {/* authenticação de logado */}
+              <Route element={<HeaderUser />}>
+                <Route path="/user" element={<User />} />
+                <Route path="/user/jobs" element={<ViewJobsCompany />} />
+
+                {/* only company  */}
+                <Route element={<AuthLogin type="company" />}>
                   <Route path="/user/add_job" element={<AddJob />} />
-                  <Route path="/user/jobs" element={<ViewJobs />} />
-                  <Route path="/user/recomendation/hunter" element={<ViewJobs />} />
-                  <Route path="/user/recomendation/company" element={<ViewJobs />} />
-                  <Route path="/user/help" element={<ViewJobs />} />
                 </Route>
-              </Route>
 
-              {/* <Route path="/user/company" element={<User />} /> */}
-              {/* <Route path="/teste" element={<Login />} /> */}
-            </Routes>
-          </div>
+                {/* only hunter  */}
+                <Route element={<AuthLogin type="hunter" />}>
+                  <Route path="/user/all_jobs" element={<AllJobs />} />
+                </Route>
+
+                <Route
+                  path="/user/recomendation/hunter"
+                  element={<ViewJobsCompany />}
+                />
+                <Route
+                  path="/user/recomendation/company"
+                  element={<ViewJobsCompany />}
+                />
+                <Route path="/user/help" element={<ViewJobsCompany />} />
+              </Route>
+            </Route>
+
+            {/* <Route path="/user/company" element={<User />} /> */}
+            {/* <Route path="/teste" element={<Login />} /> */}
+          </Routes>
         </BrowserRouter>
       </AdminProvider>
     </>

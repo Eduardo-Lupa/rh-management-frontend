@@ -1,7 +1,7 @@
-import { useGetJobsCompany } from "../api/hooks";
-import { formatDate, formatFloat } from "../utils/formatUtils";
+import { useGetJobsCompany } from "../../api/hooks";
+import { formatDate, formatFloat } from "../../utils/formatUtils";
 
-export const ViewJobs = () => {
+export const ViewJobsCompany = () => {
   const { data: jobsCompany } = useGetJobsCompany();
 
   return (

@@ -8,7 +8,7 @@ export const HeaderUser = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="w-[13rem] border-r-2 border-gray-200">
+      <div className="w-[12rem] border-r-2 border-gray-200">
         <div className="flex flex-col h-full">
           {/* superior part */}
           <div className="border-b-2 border-gray-200 pb-5 pt-6">
@@ -32,7 +32,7 @@ export const HeaderUser = () => {
             <div className="flex flex-col justify-center items-center mr-1">
               {/* hunter buttons */}
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user"}>Novos Jobs</Link>
+                <Link to={"/user/all_jobs"}>Novos Jobs</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
                 <Link to={"/user/teste"}>Meus Jobs</Link>
@@ -51,7 +51,7 @@ export const HeaderUser = () => {
             // company buttons
             <div className="flex flex-col justify-center items-center mr-1">
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user/add_job"}>Adicionar Job</Link>
+                <Link to={"/user/add_job?tab=1"}>Adicionar Job</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
                 <Link to={"/user/jobs"}>Meus Jobs</Link>
@@ -85,7 +85,10 @@ export const HeaderUser = () => {
           </div>
         </div>
       </div>
-      <Outlet />
+      
+      <div className="flex-grow">
+        <Outlet />
+      </div>
     </div>
   );
 };

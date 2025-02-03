@@ -27,8 +27,13 @@ export const useAxiosInstance = (): AxiosInstance => {
     },
     (error) => {
       if (error.response && error.response.status === 401) {
-        localStorage.removeItem("token");
-        window.location.href = "/login"; // TODO testar se funciona
+        const isLoginRequest =
+          error.config.url.includes("/auth/login") ||
+          error.config.url.includes("/auth/reset-password");
+        if (!isLoginRequest) {
+          localStorage.removeItem("token");
+          window.location.href = "/login"; // TODO testar se funciona
+        }
       }
       return Promise.reject(error);
     }

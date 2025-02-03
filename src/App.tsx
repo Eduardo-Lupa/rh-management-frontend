@@ -12,6 +12,8 @@ import { AddJob } from "./pages/company/addJob";
 import { ViewJobsCompany } from "./pages/company/viewJobs";
 import { AllJobs } from "./pages/hunter/allJobs";
 import { AdminJobs } from "./pages/admin/jobs";
+import { ForgotPassword } from "./pages/forgotPassword";
+import { ChangePassword } from "./pages/changePassword";
 
 export const App = () => {
   // const auth = useAuth();
@@ -52,6 +54,8 @@ export const App = () => {
             <Route element={<Header />}>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/login/forgot-password" element={<ForgotPassword />} />
+              <Route path="/login/forgot-password/:token" element={<ChangePassword />} />
             </Route>
 
             <Route element={<AuthLogin />}>

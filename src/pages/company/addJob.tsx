@@ -26,7 +26,7 @@ export const AddJob = () => {
   };
 
   return (
-    <div className="bg-gray-100 w-full px-4">
+    <div className="bg-gray-100 w-full h-full px-4">
       <h1 className="text-2xl font-bold mb-4 pt-4">Adicinar Emprego</h1>
 
       <form onSubmit={handleSubmit(createButton)}>

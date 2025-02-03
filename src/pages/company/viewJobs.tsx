@@ -84,9 +84,9 @@ export const ViewJobsCompany = () => {
 
               <div className="flex gap-4 mr-4">
                 {/* descricao */}
-                <p className="text-gray-600 basis-2/3 line-clamp-3">
+                <p className="text-gray-600 basis-2/3">
                   <span className="font-semibold mr-2">Descrição:</span>
-                  {job.description}
+                  <p className="line-clamp-3">{job.description}</p>
                 </p>
 
                 {/* barra lateral direita */}

@@ -8,7 +8,7 @@ export const HeaderUser = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="w-[12rem] border-r-2 border-gray-200">
+      <div className="w-[12rem] border-r-2 border-gray-200 flex-shrink-0">
         <div className="flex flex-col h-full">
           {/* superior part */}
           <div className="border-b-2 border-gray-200 pb-5 pt-6">
@@ -41,7 +41,7 @@ export const HeaderUser = () => {
                 <Link to={"/user/teste"}>Candidatos</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user/teste"}>Indique uma empresa</Link>
+                <Link to={"/user/recomendation/company"}>Indique uma empresa</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
                 <Link to={"/user/help"}>Help</Link>

@@ -17,3 +17,15 @@ export const getUser = async () => {
 export const getAwaitingJobs = async () => {
     return await axiosInstance.get("/company/jobs/awaiting").then(response => response.data);
 }
+
+export const getAllJobsApproved = async () => {
+    return await axiosInstance.get("/user/jobhunter").then(response => response.data);
+}
+
+export const getHunterJobAssignment = async (params: any) => {
+    return await axiosInstance.get("/user/jobhunterassignment", { params }).then(response => response.data);
+}
+
+export const getHunterJobAssigned = async () => {
+    return await axiosInstance.get("/user/jobshunterassignmented").then(response => response.data);
+}

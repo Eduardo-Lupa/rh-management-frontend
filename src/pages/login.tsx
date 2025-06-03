@@ -56,7 +56,7 @@ export const Login = () => {
                   },
                 })}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Enter your email"
+                placeholder="Digite seu email"
               />
               {errors.email && (
                 <span className="text-red-500">{errors.email.message}</span>
@@ -69,14 +69,14 @@ export const Login = () => {
                 htmlFor="password"
                 className="block text-gray-700 font-bold mb-2"
               >
-                Password
+                Senha
               </label>
               <input
                 type="password"
                 id="password"
                 {...register("password", { required: "Senha é obrigatório" })}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Enter your password"
+                placeholder="Digite sua senha"
               />
               {errors.password && (
                 <span className="text-red-500">{errors.password.message}</span>

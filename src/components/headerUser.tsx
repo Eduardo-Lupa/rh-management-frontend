@@ -35,7 +35,7 @@ export const HeaderUser = () => {
                 <Link to={"/user/all_jobs"}>Novos Jobs</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
-                <Link to={"/user/teste"}>Meus Jobs</Link>
+                <Link to={"/user/my_jobs"}>Meus Jobs</Link>
               </div>
               <div className="border-b-[1.5px] w-full flex flex-col justify-center items-center">
                 <Link to={"/user/teste"}>Candidatos</Link>

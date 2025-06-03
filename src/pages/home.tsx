@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import PlaceholderImage from "../assets/Placeholder_Image.png";
 import MyLogo from "../assets/logo.svg";
-import { useEffect } from "react";
 
 export const Home = () => {
   return (

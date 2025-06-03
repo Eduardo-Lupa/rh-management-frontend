@@ -7,7 +7,7 @@ export const AddJob = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const { mutate: mutateCreateJob } = useCreateJob();

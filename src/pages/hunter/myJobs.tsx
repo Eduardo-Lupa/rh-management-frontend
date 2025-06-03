@@ -1,27 +1,18 @@
-import { toast } from "react-toastify";
-import { useGetAllJobsApproved, useHunterJobAssignment } from "../../api/hooks";
+import { useNavigate } from "react-router-dom";
+import { useGetAllJobsAssigned } from "../../api/hooks";
 import { formatDate, formatFloat } from "../../utils/formatUtils";
 
-export const AllJobs = () => {
-  const { data: jobs, refetch: refetchAllJobs } = useGetAllJobsApproved();
-
-  const { mutate: assignmentHunterJobMutate } = useHunterJobAssignment();
-
-  const getJobButton = (job: string | number) => {
-    assignmentHunterJobMutate({ job_id: job }, {
-      onSuccess: () => {
-        toast.success("Vaga atribuída com sucesso!");
-        refetchAllJobs();
-      },
-      onError: (error: any) => {
-        toast.error(error.response.data.message);
-      }
-    });
-  }
+export const MyJobs = () => {
+  const { data: jobs } = useGetAllJobsAssigned();
+  const navigate = useNavigate();
+  
+  const addCandidateButton = (job_id: string | number) => {
+    navigate(`/hunter/job/${job_id}`);
+  };
 
   return (
     <div className="bg-gray-100 w-full px-4 h-screen flex flex-col">
-      <h1 className="text-2xl font-bold mb-4 pt-4">Novos Empregos</h1>
+      <h1 className="text-2xl font-bold mb-4 pt-4">Meus Empregos</h1>
       {/* TODO criar edit com janela flutuante */}
       <div className="overflow-y-auto pr-1"></div>
 
@@ -65,21 +56,21 @@ export const AllJobs = () => {
                   {formatDate(job.expires_at)}
                 </p>
               </div>
-
-
             </div>
             <div className="flex items-center gap-2 mt-2">
-                <button
-                  className="ml-auto bg-green-500 text-white px-2 py-1 rounded-md"
-                  onClick={() => getJobButton(job.id)}
-                >
-                  Pegar job
-                </button>
-              </div>
+              <button
+                className="ml-auto bg-gray-500 text-white px-2 py-1 rounded-md"
+                onClick={() => addCandidateButton(job.id)}
+              >
+                informações
+              </button>
+            </div>
           </div>
         ))
       ) : (
-        <p className="flex justify-center items-center h-full text-lg">Não há empregos cadastrados</p> // TODO criar loading e melhorar o nao há cadastros
+        <p className="flex justify-center items-center h-full text-lg">
+          Não há empregos cadastrados
+        </p> // TODO criar loading e melhorar o nao há cadastros
       )}
     </div>
   );

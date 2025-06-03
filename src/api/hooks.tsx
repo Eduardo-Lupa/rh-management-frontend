@@ -7,8 +7,11 @@ import {
   postResetPassword,
 } from "./endpoints/post";
 import {
+  getAllJobsApproved,
   getAuthType,
   getAwaitingJobs,
+  getHunterJobAssigned,
+  getHunterJobAssignment,
   getJobsCompany,
   getUser,
 } from "./endpoints/get";
@@ -73,5 +76,26 @@ export const useResetPassword = () => {
   return useMutation({
     mutationFn: ({ token, body }: { token: string | undefined; body: any }) =>
       postResetPassword(token, body),
+  });
+};
+
+export const useGetAllJobsApproved = () => {
+  return useQuery({
+    queryKey: ["getAllJobsApproved"],
+    queryFn: () => getAllJobsApproved(),
+  });
+};
+
+export const useHunterJobAssignment = () => {
+  return useMutation({
+    mutationFn: (body: any) =>
+      getHunterJobAssignment(body),
+  });
+};
+
+export const useGetAllJobsAssigned = () => {
+  return useQuery({
+    queryKey: ["getAllJobsAssigned"],
+    queryFn: () => getHunterJobAssigned(),
   });
 };

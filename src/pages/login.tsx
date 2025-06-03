@@ -30,10 +30,10 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-1 h-[90%]">
+    <div className="flex justify-center items-center">
       {/* login form */}
-      <div className="flex justify-center items-center w-full">
-        <div className="border border-gray-200 rounded-lg p-12 w-full max-w-md shadow-md">
+      <div className="flex min-h-[90vh] w-full justify-center items-center px-4">
+        <div className="border border-gray-200 rounded-lg p-8 sm:p-12 w-full max-w-md shadow-md bg-white">
           <h1 className="text-3xl font-bold text-center mb-6">Bem vindo</h1>
 
           <form onSubmit={handleSubmit(loginButton)}>

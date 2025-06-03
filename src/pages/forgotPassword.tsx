@@ -19,25 +19,25 @@ export const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex h-[90%] justify-center items-center">
-      <div className="flex flex-col border border-gray-200 bg-white gap-3 shadow-lg px-8 pt-8 pb-3 rounded-md text-center">
+    <div className="flex min-h-[90vh] justify-center items-center px-4">
+      <div className="flex flex-col border border-gray-200 bg-white gap-3 shadow-lg px-8 pt-8 pb-3 rounded-md text-center max-w-md w-full">
         <p className="text font-OpenSans font-semibold">Esqueceu sua senha?</p>
-
+  
         <p className="text font-OpenSans font-semibold">
           Digite seu e-mail e enviaremos um link para redefinir sua senha.
         </p>
-
-        <form onSubmit={handleSubmit(forgotPassword)}>
+  
+        <form onSubmit={handleSubmit(forgotPassword)} className="flex flex-col gap-3">
           <input
             type="email"
             placeholder="Digite seu e-mail"
             className="border border-gray-300 rounded-md p-2 w-full"
             {...register("email", { required: true })}
           />
-
+  
           <button
             type="submit"
-            className="bg-black text-white py-1 px-2 mx-auto rounded-md mt-6"
+            className="bg-black text-white py-2 px-4 rounded-md mt-4"
           >
             Enviar
           </button>

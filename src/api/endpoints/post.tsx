@@ -1,5 +1,5 @@
 import { LoginType } from "../../types/login";
-import { useAxiosInstance } from "../axiosConfig";
+import { useAxiosInstance } from "../axiosConfigBackend";
 
 const axiosInstance = useAxiosInstance();
 

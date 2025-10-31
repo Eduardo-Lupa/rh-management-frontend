@@ -66,6 +66,7 @@ Siga os passos abaixo para configurar e executar este projeto em sua máquina lo
 ### Pré-requisitos
 
 Certifique-se de ter o **Node.js** e o **npm** (ou Yarn) instalados em seu ambiente.
+Rode o Back-end da aplicação para poder funcionar as requisições
 
 ### 1. Clonar o Repositório
 
@@ -74,5 +75,11 @@ Abra seu terminal e clone o projeto:
 ```bash
 git clone https://github.com/Eduardo-Lupa/rh-management-frontend.git
 cd rh-management-frontend
+```
+
+Clone o .env.example e altere para as variaveis que voce quiser: 
+
+```bash
+cp .env.example .env
 npm run start:dev
 ```
